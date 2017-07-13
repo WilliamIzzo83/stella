@@ -14,7 +14,7 @@ import Foundation
  */
 protocol IDataConsumer {
     /// The underlying data provider from where consumer will get its data.
-    func dataProvider() -> IDataProvider
+    var dataProvider : IDataProvider! { get }
     /// Retrieves data from the consumer's data provider.
     func consumeData()
 }

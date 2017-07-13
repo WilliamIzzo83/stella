@@ -10,7 +10,7 @@ import UIKit
 
 
 struct CellBinderDescriptor {
-    let cellReuseId : String
+    let cellReuseId : CellsIdentifiers
     let bind : (UITableViewCell, IDataModel) -> Void
 }
 
@@ -18,6 +18,7 @@ struct CellBinderDescriptor {
 class ItemsListTableViewController: UITableViewController, IDataConsumer {
     
     var itemsList = [IDataModel]()
+    var dataProvider : IDataProvider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,15 +27,16 @@ class ItemsListTableViewController: UITableViewController, IDataConsumer {
     }
     
     func cellBinderDescriptor(model:IDataModel) -> CellBinderDescriptor {
-        return CellBinderDescriptor(cellReuseId: "") { (cell) in }
+        return CellBinderDescriptor(cellReuseId: .categoryCell) { (cell) in }
     }
     
-    func dataProvider() -> IDataProvider {
-        return NullDataProvider()
+    
+    func item(at path:IndexPath) -> IDataModel {
+        return itemsList[path.row]
     }
     
     func consumeData() {
-        dataProvider().retrieveData { [weak self](data, error) in
+        dataProvider.retrieveData { [weak self](data, error) in
             guard error == nil else {
                 return
             }
@@ -65,7 +67,7 @@ class ItemsListTableViewController: UITableViewController, IDataConsumer {
         
         
         let cell = tableView.dequeueReusableCell(
-            withIdentifier: binderDesc.cellReuseId,
+            withIdentifier: binderDesc.cellReuseId.rawValue,
             for: indexPath)
         
         

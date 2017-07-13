@@ -9,19 +9,29 @@
 import UIKit
 
 class ProductsListTableViewController : ItemsListTableViewController {
-    override func dataProvider() -> IDataProvider {
-        return BazDataProvider()
+    var category : FooModel!
+    
+    override func viewDidLoad() {
+        dataProvider = BazDataProvider()
+        super.viewDidLoad()
+        title = category.title
     }
     
-    private let descs : [Int:CellBinderDescriptor] = [
-        FooModelType :
-            CellBinderDescriptor(cellReuseId:"product_cell") { (cell, model) in
-                let fooModel = model as! FooModel
-                cell.textLabel?.text = fooModel.title
-        }
-    ]
+    private let binderDescriptor =
+        CellBinderDescriptor(cellReuseId:.productCell) { (cell, model) in
+            let fooModel = model as! FooModel
+            cell.textLabel?.text = fooModel.title
+    }
     
     override func cellBinderDescriptor(model: IDataModel) -> CellBinderDescriptor {
-        return descs[type(of: model).type]!
+        return binderDescriptor
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let productDetailController = segue.destination as! ProductDetailViewController
+        let selectedPath = tableView.indexPathForSelectedRow!
+        let item = self.item(at: selectedPath)
+        
+        productDetailController.product = item as! FooModel
     }
 }

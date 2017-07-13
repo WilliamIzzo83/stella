@@ -110,7 +110,7 @@
         <!--Detail-->
         <scene sceneID="vmT-zh-5sW">
             <objects>
-                <viewController title="Detail" id="Lrf-BD-RwR" sceneMemberID="viewController">
+                <viewController title="Detail" id="Lrf-BD-RwR" customClass="ProductDetailViewController" customModule="OFS_Stella" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ROU-Vb-E2M"/>
                         <viewControllerLayoutGuide type="bottom" id="tBJ-5A-A2r"/>
