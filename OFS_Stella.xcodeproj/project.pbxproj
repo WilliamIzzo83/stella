@@ -8,20 +8,48 @@
 
 /* Begin PBXBuildFile section */
 		3D7359CA1F178D8900E918C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359C91F178D8900E918C5 /* AppDelegate.swift */; };
-		3D7359CC1F178D8900E918C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359CB1F178D8900E918C5 /* ViewController.swift */; };
 		3D7359CF1F178D8900E918C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7359CD1F178D8900E918C5 /* Main.storyboard */; };
 		3D7359D11F178D8900E918C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D7359D01F178D8900E918C5 /* Assets.xcassets */; };
 		3D7359D41F178D8900E918C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D7359D21F178D8900E918C5 /* LaunchScreen.storyboard */; };
+		3D7359E31F17962200E918C5 /* FooModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359E11F17962200E918C5 /* FooModel.swift */; };
+		3D7359EA1F17EE7C00E918C5 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359E91F17EE7C00E918C5 /* CategoriesTableViewController.swift */; };
+		3D7359EC1F17EE9200E918C5 /* ProductsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359EB1F17EE9200E918C5 /* ProductsListTableViewController.swift */; };
+		3D7359EE1F17EEA600E918C5 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359ED1F17EEA600E918C5 /* ProductDetailViewController.swift */; };
+		3D7359F91F17F2C700E918C5 /* FooDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359F81F17F2C700E918C5 /* FooDataProvider.swift */; };
+		3D735A021F18060100E918C5 /* IDataConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359FF1F18060100E918C5 /* IDataConsumer.swift */; };
+		3D735A031F18060100E918C5 /* IDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A001F18060100E918C5 /* IDataModel.swift */; };
+		3D735A041F18060100E918C5 /* IDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A011F18060100E918C5 /* IDataProvider.swift */; };
+		3D735A061F18066000E918C5 /* TableViewCellDequeuer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A051F18066000E918C5 /* TableViewCellDequeuer.swift */; };
+		3D735A091F180AB900E918C5 /* CategoryTableViewCellBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A081F180AB900E918C5 /* CategoryTableViewCellBinder.swift */; };
+		3D735A0B1F180B7300E918C5 /* TableViewCellBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A0A1F180B7300E918C5 /* TableViewCellBinder.swift */; };
+		3D735A0D1F180DBE00E918C5 /* ItemsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A0C1F180DBE00E918C5 /* ItemsListTableViewController.swift */; };
+		3D735A0F1F180E2B00E918C5 /* NullDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A0E1F180E2B00E918C5 /* NullDataProvider.swift */; };
+		3D735A111F180FBF00E918C5 /* BazDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A101F180FBF00E918C5 /* BazDataProvider.swift */; };
+		3D735A131F18104C00E918C5 /* ProductTableViewCellBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A121F18104C00E918C5 /* ProductTableViewCellBinder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D7359C61F178D8900E918C5 /* OFS_Stella.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OFS_Stella.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D7359C91F178D8900E918C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3D7359CB1F178D8900E918C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3D7359CE1F178D8900E918C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D7359D01F178D8900E918C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D7359D31F178D8900E918C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D7359D51F178D8900E918C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D7359E11F17962200E918C5 /* FooModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooModel.swift; sourceTree = "<group>"; };
+		3D7359E91F17EE7C00E918C5 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesTableViewController.swift; path = controllers/CategoriesTableViewController.swift; sourceTree = "<group>"; };
+		3D7359EB1F17EE9200E918C5 /* ProductsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsListTableViewController.swift; path = controllers/ProductsListTableViewController.swift; sourceTree = "<group>"; };
+		3D7359ED1F17EEA600E918C5 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetailViewController.swift; path = controllers/ProductDetailViewController.swift; sourceTree = "<group>"; };
+		3D7359F81F17F2C700E918C5 /* FooDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FooDataProvider.swift; path = dataProviders/FooDataProvider.swift; sourceTree = "<group>"; };
+		3D7359FF1F18060100E918C5 /* IDataConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataConsumer.swift; sourceTree = "<group>"; };
+		3D735A001F18060100E918C5 /* IDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataModel.swift; sourceTree = "<group>"; };
+		3D735A011F18060100E918C5 /* IDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataProvider.swift; sourceTree = "<group>"; };
+		3D735A051F18066000E918C5 /* TableViewCellDequeuer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellDequeuer.swift; path = controllers/TableViewCellDequeuer.swift; sourceTree = "<group>"; };
+		3D735A081F180AB900E918C5 /* CategoryTableViewCellBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCellBinder.swift; path = controllers/binders/CategoryTableViewCellBinder.swift; sourceTree = "<group>"; };
+		3D735A0A1F180B7300E918C5 /* TableViewCellBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellBinder.swift; path = controllers/binders/TableViewCellBinder.swift; sourceTree = "<group>"; };
+		3D735A0C1F180DBE00E918C5 /* ItemsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsListTableViewController.swift; path = controllers/ItemsListTableViewController.swift; sourceTree = "<group>"; };
+		3D735A0E1F180E2B00E918C5 /* NullDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NullDataProvider.swift; path = dataProviders/NullDataProvider.swift; sourceTree = "<group>"; };
+		3D735A101F180FBF00E918C5 /* BazDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BazDataProvider.swift; path = dataProviders/BazDataProvider.swift; sourceTree = "<group>"; };
+		3D735A121F18104C00E918C5 /* ProductTableViewCellBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductTableViewCellBinder.swift; path = controllers/binders/ProductTableViewCellBinder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +82,76 @@
 		3D7359C81F178D8900E918C5 /* OFS_Stella */ = {
 			isa = PBXGroup;
 			children = (
+				3D7359FE1F18060100E918C5 /* foundation */,
+				3D7359F71F17F28D00E918C5 /* dataProviders */,
+				3D7359F61F17F24C00E918C5 /* consumers */,
+				3D7359E81F17EE5500E918C5 /* controllers */,
+				3D7359E01F17962200E918C5 /* models */,
 				3D7359C91F178D8900E918C5 /* AppDelegate.swift */,
-				3D7359CB1F178D8900E918C5 /* ViewController.swift */,
 				3D7359CD1F178D8900E918C5 /* Main.storyboard */,
 				3D7359D01F178D8900E918C5 /* Assets.xcassets */,
 				3D7359D21F178D8900E918C5 /* LaunchScreen.storyboard */,
 				3D7359D51F178D8900E918C5 /* Info.plist */,
 			);
 			path = OFS_Stella;
+			sourceTree = "<group>";
+		};
+		3D7359E01F17962200E918C5 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3D7359E11F17962200E918C5 /* FooModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		3D7359E81F17EE5500E918C5 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D735A071F180A7F00E918C5 /* binders */,
+				3D735A051F18066000E918C5 /* TableViewCellDequeuer.swift */,
+				3D735A0C1F180DBE00E918C5 /* ItemsListTableViewController.swift */,
+				3D7359E91F17EE7C00E918C5 /* CategoriesTableViewController.swift */,
+				3D7359EB1F17EE9200E918C5 /* ProductsListTableViewController.swift */,
+				3D7359ED1F17EEA600E918C5 /* ProductDetailViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		3D7359F61F17F24C00E918C5 /* consumers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = consumers;
+			sourceTree = "<group>";
+		};
+		3D7359F71F17F28D00E918C5 /* dataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				3D7359F81F17F2C700E918C5 /* FooDataProvider.swift */,
+				3D735A0E1F180E2B00E918C5 /* NullDataProvider.swift */,
+				3D735A101F180FBF00E918C5 /* BazDataProvider.swift */,
+			);
+			name = dataProviders;
+			sourceTree = "<group>";
+		};
+		3D7359FE1F18060100E918C5 /* foundation */ = {
+			isa = PBXGroup;
+			children = (
+				3D7359FF1F18060100E918C5 /* IDataConsumer.swift */,
+				3D735A001F18060100E918C5 /* IDataModel.swift */,
+				3D735A011F18060100E918C5 /* IDataProvider.swift */,
+			);
+			path = foundation;
+			sourceTree = "<group>";
+		};
+		3D735A071F180A7F00E918C5 /* binders */ = {
+			isa = PBXGroup;
+			children = (
+				3D735A081F180AB900E918C5 /* CategoryTableViewCellBinder.swift */,
+				3D735A121F18104C00E918C5 /* ProductTableViewCellBinder.swift */,
+				3D735A0A1F180B7300E918C5 /* TableViewCellBinder.swift */,
+			);
+			name = binders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +227,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D7359CC1F178D8900E918C5 /* ViewController.swift in Sources */,
+				3D735A021F18060100E918C5 /* IDataConsumer.swift in Sources */,
+				3D7359E31F17962200E918C5 /* FooModel.swift in Sources */,
+				3D7359EE1F17EEA600E918C5 /* ProductDetailViewController.swift in Sources */,
+				3D7359F91F17F2C700E918C5 /* FooDataProvider.swift in Sources */,
+				3D735A111F180FBF00E918C5 /* BazDataProvider.swift in Sources */,
+				3D735A091F180AB900E918C5 /* CategoryTableViewCellBinder.swift in Sources */,
+				3D735A131F18104C00E918C5 /* ProductTableViewCellBinder.swift in Sources */,
+				3D735A0F1F180E2B00E918C5 /* NullDataProvider.swift in Sources */,
+				3D735A0D1F180DBE00E918C5 /* ItemsListTableViewController.swift in Sources */,
 				3D7359CA1F178D8900E918C5 /* AppDelegate.swift in Sources */,
+				3D735A041F18060100E918C5 /* IDataProvider.swift in Sources */,
+				3D7359EA1F17EE7C00E918C5 /* CategoriesTableViewController.swift in Sources */,
+				3D7359EC1F17EE9200E918C5 /* ProductsListTableViewController.swift in Sources */,
+				3D735A031F18060100E918C5 /* IDataModel.swift in Sources */,
+				3D735A061F18066000E918C5 /* TableViewCellDequeuer.swift in Sources */,
+				3D735A0B1F180B7300E918C5 /* TableViewCellBinder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
