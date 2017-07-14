@@ -8,23 +8,21 @@
 
 import UIKit
 
+/**
+ * This controllers shows the product list associated to a specific category.
+ */
 class ProductsListTableViewController : ItemsListTableViewController {
+    /// Product's list category. This must be set before the data retrieve cycle
+    /// begins.
     var category : FooModel!
     
-    override func viewDidLoad() {
+    override func setupListController() {
         dataProvider = BazDataProvider()
-        super.viewDidLoad()
+        binderDescriptorProvider = { _ in
+            return ProductsListTableViewController.binderDescriptor
+        }
+        
         title = category.title
-    }
-    
-    private let binderDescriptor =
-        CellBinderDescriptor(cellReuseId:.productCell) { (cell, model) in
-            let fooModel = model as! FooModel
-            cell.textLabel?.text = fooModel.title
-    }
-    
-    override func cellBinderDescriptor(model: IDataModel) -> CellBinderDescriptor {
-        return binderDescriptor
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,5 +31,14 @@ class ProductsListTableViewController : ItemsListTableViewController {
         let item = self.item(at: selectedPath)
         
         productDetailController.product = item as! FooModel
+    }
+}
+
+/// Defines the binder descriptor for this controller
+extension ProductsListTableViewController {
+    fileprivate static let binderDescriptor =
+        CellBinderDescriptor(cellReuseId:.productCell) { (cell, model) in
+            let fooModel = model as! FooModel
+            cell.textLabel?.text = fooModel.title
     }
 }
