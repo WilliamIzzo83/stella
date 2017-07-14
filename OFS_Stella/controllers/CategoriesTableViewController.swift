@@ -8,27 +8,17 @@
 
 import UIKit
 
-
 /**
  * This is the main view controller of the application. It renders application's
  * main category list, allowing user to navigate them. The controller is a 
  * specialization of ItemsListTableViewController.
  */
 class CategoriesTableViewController: ItemsListTableViewController {
-    
-    private let binderDescriptor =
-        CellBinderDescriptor(cellReuseId:.categoryCell) { (cell, model) in
-        let fooModel = model as! FooModel
-        cell.textLabel?.text = fooModel.title
-    }
-    
-    override func viewDidLoad() {
+    override func setupListController() {
         dataProvider = FooDataProvider()
-        super.viewDidLoad()
-    }
-    
-    override func cellBinderDescriptor(model: IDataModel) -> CellBinderDescriptor {
-        return binderDescriptor
+        binderDescriptorProvider = { _ in
+            return CategoriesTableViewController.binderDescriptor
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -37,5 +27,15 @@ class CategoriesTableViewController: ItemsListTableViewController {
         let item = self.item(at: selectedPath)
 
         productListController.category = item as! FooModel
+    }
+}
+
+/// This extension defines binder descriptor used by
+/// CategoriesTableViewController
+extension CategoriesTableViewController {
+    fileprivate static let binderDescriptor =
+        CellBinderDescriptor(cellReuseId:.categoryCell) { (cell, model) in
+            let fooModel = model as! FooModel
+            cell.textLabel?.text = fooModel.title
     }
 }
