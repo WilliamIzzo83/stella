@@ -14,7 +14,7 @@ import UIKit
 class ProductsListTableViewController : ItemsListTableViewController {
     /// Product's list category. This must be set before the data retrieve cycle
     /// begins.
-    var category : FooModel!
+    var department : DepartmentModel!
     
     override func setupListController() {
         dataProvider = BazDataProvider()
@@ -22,7 +22,7 @@ class ProductsListTableViewController : ItemsListTableViewController {
             return ProductsListTableViewController.binderDescriptor
         }
         
-        title = category.title
+        title = department.name
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

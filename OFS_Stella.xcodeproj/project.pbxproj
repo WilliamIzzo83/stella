@@ -15,14 +15,19 @@
 		3D7359EA1F17EE7C00E918C5 /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359E91F17EE7C00E918C5 /* CategoriesTableViewController.swift */; };
 		3D7359EC1F17EE9200E918C5 /* ProductsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359EB1F17EE9200E918C5 /* ProductsListTableViewController.swift */; };
 		3D7359EE1F17EEA600E918C5 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359ED1F17EEA600E918C5 /* ProductDetailViewController.swift */; };
-		3D7359F91F17F2C700E918C5 /* FooDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359F81F17F2C700E918C5 /* FooDataProvider.swift */; };
 		3D735A021F18060100E918C5 /* IDataConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7359FF1F18060100E918C5 /* IDataConsumer.swift */; };
 		3D735A031F18060100E918C5 /* IDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A001F18060100E918C5 /* IDataModel.swift */; };
 		3D735A041F18060100E918C5 /* IDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A011F18060100E918C5 /* IDataProvider.swift */; };
 		3D735A061F18066000E918C5 /* TableViewCellsIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A051F18066000E918C5 /* TableViewCellsIdentifiers.swift */; };
 		3D735A0D1F180DBE00E918C5 /* ItemsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A0C1F180DBE00E918C5 /* ItemsListTableViewController.swift */; };
-		3D735A0F1F180E2B00E918C5 /* NullDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A0E1F180E2B00E918C5 /* NullDataProvider.swift */; };
 		3D735A111F180FBF00E918C5 /* BazDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D735A101F180FBF00E918C5 /* BazDataProvider.swift */; };
+		F74A66B01F18F2300042B0FD /* URLDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66AF1F18F2300042B0FD /* URLDataProvider.swift */; };
+		F74A66B21F18FAEA0042B0FD /* ProductsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66B11F18FAEA0042B0FD /* ProductsDataProvider.swift */; };
+		F74A66B71F19038A0042B0FD /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66B61F19038A0042B0FD /* Department.swift */; };
+		F74A66B91F1909080042B0FD /* DepartmentDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66B81F1909080042B0FD /* DepartmentDataProvider.swift */; };
+		F74A66BE1F1909D40042B0FD /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66BD1F1909D40042B0FD /* AppImages.swift */; };
+		F74A66C01F190A1F0042B0FD /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66BF1F190A1F0042B0FD /* Asset.swift */; };
+		F74A66C21F1911A10042B0FD /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66C11F1911A10042B0FD /* AppStrings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,14 +41,19 @@
 		3D7359E91F17EE7C00E918C5 /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesTableViewController.swift; path = controllers/CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		3D7359EB1F17EE9200E918C5 /* ProductsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsListTableViewController.swift; path = controllers/ProductsListTableViewController.swift; sourceTree = "<group>"; };
 		3D7359ED1F17EEA600E918C5 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductDetailViewController.swift; path = controllers/ProductDetailViewController.swift; sourceTree = "<group>"; };
-		3D7359F81F17F2C700E918C5 /* FooDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FooDataProvider.swift; path = dataProviders/FooDataProvider.swift; sourceTree = "<group>"; };
 		3D7359FF1F18060100E918C5 /* IDataConsumer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataConsumer.swift; sourceTree = "<group>"; };
 		3D735A001F18060100E918C5 /* IDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataModel.swift; sourceTree = "<group>"; };
 		3D735A011F18060100E918C5 /* IDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IDataProvider.swift; sourceTree = "<group>"; };
 		3D735A051F18066000E918C5 /* TableViewCellsIdentifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCellsIdentifiers.swift; path = controllers/TableViewCellsIdentifiers.swift; sourceTree = "<group>"; };
 		3D735A0C1F180DBE00E918C5 /* ItemsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemsListTableViewController.swift; path = controllers/ItemsListTableViewController.swift; sourceTree = "<group>"; };
-		3D735A0E1F180E2B00E918C5 /* NullDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NullDataProvider.swift; path = dataProviders/NullDataProvider.swift; sourceTree = "<group>"; };
 		3D735A101F180FBF00E918C5 /* BazDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BazDataProvider.swift; path = dataProviders/BazDataProvider.swift; sourceTree = "<group>"; };
+		F74A66AF1F18F2300042B0FD /* URLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLDataProvider.swift; path = dataProviders/URLDataProvider.swift; sourceTree = "<group>"; };
+		F74A66B11F18FAEA0042B0FD /* ProductsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsDataProvider.swift; path = dataProviders/ProductsDataProvider.swift; sourceTree = "<group>"; };
+		F74A66B61F19038A0042B0FD /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
+		F74A66B81F1909080042B0FD /* DepartmentDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepartmentDataProvider.swift; path = dataProviders/DepartmentDataProvider.swift; sourceTree = "<group>"; };
+		F74A66BD1F1909D40042B0FD /* AppImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppImages.swift; path = assets/AppImages.swift; sourceTree = "<group>"; };
+		F74A66BF1F190A1F0042B0FD /* Asset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Asset.swift; path = assets/Asset.swift; sourceTree = "<group>"; };
+		F74A66C11F1911A10042B0FD /* AppStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppStrings.swift; path = assets/AppStrings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 		3D7359C81F178D8900E918C5 /* OFS_Stella */ = {
 			isa = PBXGroup;
 			children = (
+				F74A66BA1F1909A20042B0FD /* assets */,
 				3D7359FE1F18060100E918C5 /* foundation */,
 				3D7359F71F17F28D00E918C5 /* dataProviders */,
 				3D7359E81F17EE5500E918C5 /* controllers */,
@@ -92,6 +103,7 @@
 		3D7359E01F17962200E918C5 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				F74A66B61F19038A0042B0FD /* Department.swift */,
 				3D7359E11F17962200E918C5 /* FooModel.swift */,
 			);
 			path = models;
@@ -112,9 +124,10 @@
 		3D7359F71F17F28D00E918C5 /* dataProviders */ = {
 			isa = PBXGroup;
 			children = (
-				3D7359F81F17F2C700E918C5 /* FooDataProvider.swift */,
-				3D735A0E1F180E2B00E918C5 /* NullDataProvider.swift */,
 				3D735A101F180FBF00E918C5 /* BazDataProvider.swift */,
+				F74A66AF1F18F2300042B0FD /* URLDataProvider.swift */,
+				F74A66B11F18FAEA0042B0FD /* ProductsDataProvider.swift */,
+				F74A66B81F1909080042B0FD /* DepartmentDataProvider.swift */,
 			);
 			name = dataProviders;
 			sourceTree = "<group>";
@@ -127,6 +140,16 @@
 				3D735A011F18060100E918C5 /* IDataProvider.swift */,
 			);
 			path = foundation;
+			sourceTree = "<group>";
+		};
+		F74A66BA1F1909A20042B0FD /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				F74A66BF1F190A1F0042B0FD /* Asset.swift */,
+				F74A66BD1F1909D40042B0FD /* AppImages.swift */,
+				F74A66C11F1911A10042B0FD /* AppStrings.swift */,
+			);
+			name = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,19 +225,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74A66C21F1911A10042B0FD /* AppStrings.swift in Sources */,
 				3D735A021F18060100E918C5 /* IDataConsumer.swift in Sources */,
 				3D7359E31F17962200E918C5 /* FooModel.swift in Sources */,
 				3D7359EE1F17EEA600E918C5 /* ProductDetailViewController.swift in Sources */,
-				3D7359F91F17F2C700E918C5 /* FooDataProvider.swift in Sources */,
 				3D735A111F180FBF00E918C5 /* BazDataProvider.swift in Sources */,
-				3D735A0F1F180E2B00E918C5 /* NullDataProvider.swift in Sources */,
+				F74A66B21F18FAEA0042B0FD /* ProductsDataProvider.swift in Sources */,
+				F74A66B91F1909080042B0FD /* DepartmentDataProvider.swift in Sources */,
 				3D735A0D1F180DBE00E918C5 /* ItemsListTableViewController.swift in Sources */,
+				F74A66C01F190A1F0042B0FD /* Asset.swift in Sources */,
 				3D7359CA1F178D8900E918C5 /* AppDelegate.swift in Sources */,
 				3D735A041F18060100E918C5 /* IDataProvider.swift in Sources */,
 				3D7359EA1F17EE7C00E918C5 /* CategoriesTableViewController.swift in Sources */,
+				F74A66B01F18F2300042B0FD /* URLDataProvider.swift in Sources */,
+				F74A66BE1F1909D40042B0FD /* AppImages.swift in Sources */,
 				3D7359EC1F17EE9200E918C5 /* ProductsListTableViewController.swift in Sources */,
 				3D735A031F18060100E918C5 /* IDataModel.swift in Sources */,
 				3D735A061F18066000E918C5 /* TableViewCellsIdentifiers.swift in Sources */,
+				F74A66B71F19038A0042B0FD /* Department.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

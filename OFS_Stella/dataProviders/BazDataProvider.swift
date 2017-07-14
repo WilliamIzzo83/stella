@@ -9,7 +9,7 @@
 import Foundation
 
 class BazDataProvider : IDataProvider {
-    func retrieveData(didRetrieveDataCallback: ([IDataModel], Error?) -> Void) {
+    func retrieveData(didRetrieveDataCallback: @escaping ([IDataModel], Error?) -> Void) {
         didRetrieveDataCallback([
             FooModel(identifier: "1234", title: "Product one"),
             FooModel(identifier: "2234", title: "Product two"),

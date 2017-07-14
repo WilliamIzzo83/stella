@@ -25,5 +25,5 @@ protocol IDataProvider {
      * - parameter didRetrieveDataCallback: callback invoked once that retrieve 
      * data process did end.
      */
-    func retrieveData(didRetrieveDataCallback:DataProviderCompletionCallback)
+    func retrieveData(didRetrieveDataCallback:@escaping DataProviderCompletionCallback)
 }
