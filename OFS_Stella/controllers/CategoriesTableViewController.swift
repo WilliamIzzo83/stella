@@ -15,7 +15,7 @@ import UIKit
  */
 class CategoriesTableViewController: ItemsListTableViewController {
     override func setupListController() {
-        dataProvider = FooDataProvider()
+        dataProvider = DepartmentDataProvider()
         binderDescriptorProvider = { _ in
             return CategoriesTableViewController.binderDescriptor
         }
@@ -26,7 +26,7 @@ class CategoriesTableViewController: ItemsListTableViewController {
         let selectedPath = tableView.indexPathForSelectedRow!        
         let item = self.item(at: selectedPath)
 
-        productListController.category = item as! FooModel
+        productListController.department = item as! DepartmentModel
     }
 }
 
@@ -35,7 +35,7 @@ class CategoriesTableViewController: ItemsListTableViewController {
 extension CategoriesTableViewController {
     fileprivate static let binderDescriptor =
         CellBinderDescriptor(cellReuseId:.categoryCell) { (cell, model) in
-            let fooModel = model as! FooModel
-            cell.textLabel?.text = fooModel.title
+            let department = model as! DepartmentModel
+            cell.textLabel?.text = department.name
     }
 }

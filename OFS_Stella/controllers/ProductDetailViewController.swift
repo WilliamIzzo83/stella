@@ -9,10 +9,10 @@
 import UIKit
 
 class ProductDetailViewController: UIViewController {
-    var product : FooModel!
+    var product : ProductModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = product.title
+        title = product.modelNames
         // Do any additional setup after loading the view.
     }
 

@@ -93,8 +93,10 @@ class ItemsListTableViewController: UITableViewController, IDataConsumer {
                 return
             }
             
-            wself.itemsList = data
-            wself.tableView.reloadData()
+            DispatchQueue.main.async {
+                wself.itemsList = data
+                wself.tableView.reloadData()
+            }
         }
     }
     
