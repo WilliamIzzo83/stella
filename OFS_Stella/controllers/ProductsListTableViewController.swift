@@ -17,7 +17,7 @@ class ProductsListTableViewController : ItemsListTableViewController {
     var department : DepartmentModel!
     
     override func setupListController() {
-        dataProvider = BazDataProvider()
+        dataProvider = URLDataProvider.productsDataProvider(department: department.id)
         binderDescriptorProvider = { _ in
             return ProductsListTableViewController.binderDescriptor
         }
@@ -30,7 +30,7 @@ class ProductsListTableViewController : ItemsListTableViewController {
         let selectedPath = tableView.indexPathForSelectedRow!
         let item = self.item(at: selectedPath)
         
-        productDetailController.product = item as! FooModel
+        productDetailController.product = item as! ProductModel
     }
 }
 
@@ -38,7 +38,7 @@ class ProductsListTableViewController : ItemsListTableViewController {
 extension ProductsListTableViewController {
     fileprivate static let binderDescriptor =
         CellBinderDescriptor(cellReuseId:.productCell) { (cell, model) in
-            let fooModel = model as! FooModel
-            cell.textLabel?.text = fooModel.title
+            let fooModel = model as! ProductModel
+            cell.textLabel?.text = fooModel.modelNames
     }
 }

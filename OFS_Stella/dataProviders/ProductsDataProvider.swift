@@ -8,15 +8,46 @@
 
 import Foundation
 
+struct RequestResponseHeader : Codable {
+    let statusCode : Int
+    let description : String
+    
+    private enum CodingKeys : String, CodingKey {
+        case statusCode = "StatusCode"
+        case description = "Description"
+    }
+}
+
+struct ResultsLiteResponse : Codable {
+    let totalResults : Int
+    let items : [ProductModel]
+    
+    private enum CodingKeys : String, CodingKey {
+        case totalResults = "TotalResults"
+        case items = "Items"
+    }
+}
+
+struct ProductRequestResponse : Codable {
+    let header : RequestResponseHeader
+    let resultsLite : ResultsLiteResponse
+    
+    private enum CodingKeys : String, CodingKey {
+        case header = "Header"
+        case resultsLite = "ResultsLite"
+    }
+}
+
 extension URLDataProvider {
     static func productsDataProvider(department:Department) -> URLDataProvider {
-        
         return URLDataProvider(url: department.url(), decoder: { (data, readyCallback) in
             do {
-                let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
-                print(json)
+                let jsonDecoder = JSONDecoder()
+                let productRsp = try jsonDecoder.decode(ProductRequestResponse.self, from: data)
+                
+                readyCallback(productRsp.resultsLite.items, nil)
             } catch {
-                readyCallback([], nil) // TODO: report error
+                readyCallback([], error) // TODO: report error
             }
         })
     }

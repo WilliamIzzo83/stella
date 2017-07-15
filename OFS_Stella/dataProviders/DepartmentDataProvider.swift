@@ -14,16 +14,20 @@ extension Department {
         switch self {
         case .readyToWear:
             return DepartmentModel(name: AppStrings.readyToWearTitle.get(),
-                                   image: .readyToWearDepartment)
+                                   image: .readyToWearDepartment,
+                                   id: .readyToWear)
         case .accessories:
             return DepartmentModel(name: AppStrings.accessoriesTitle.get(),
-                                   image: .accessoriesDepartment)
+                                   image: .accessoriesDepartment,
+                                   id: .accessories)
         case .beauty:
             return DepartmentModel(name: AppStrings.beautyTitle.get(),
-                                   image: .beautyDepartment)
+                                   image: .beautyDepartment,
+                                   id: .beauty)
         case .lingerie:
             return DepartmentModel(name: AppStrings.lingerieTitle.get(),
-                                   image: .lingerieDepartment)
+                                   image: .lingerieDepartment,
+                                   id: .lingerie)
         }
     }
 }

@@ -58,6 +58,7 @@ class URLDataProvider : IDataProvider {
                 return
             }
 
+            // TODO: check http status code
             
             self?.dataModelDecoder(data!) {
                 didRetrieveDataCallback($0, $1)
