@@ -17,7 +17,7 @@ class OFS_ProvidersTests: XCTestCase {
     }
     
     func testReadyToWearProviderData() {
-        let urlProvider = URLDataProvider.productsDataProvider(department: .readyToWear)
+        let urlProvider = URLDataProvider<[ProductModel]>.productsDataProvider(department: Department.readyToWear)
         
         let readyToWearExpectation = expectation(description: "ready to wear product retrieval")
         urlProvider.retrieveData { (readyToWearItems, error) in

@@ -9,25 +9,16 @@
 import Foundation
 import UIKit
 
-enum AppImages {
-    case readyToWearDepartment
-    case accessoriesDepartment
-    case beautyDepartment
-    case lingerieDepartment
+enum AppImages : String {
+    case readyToWearDepartment = "readytowear"
+    case accessoriesDepartment = "accessories"
+    case beautyDepartment = "beauty"
+    case lingerieDepartment = "lingerie"
 }
 
 extension AppImages : Asset {
     typealias T = UIImage
     func get() -> UIImage {
-        switch self {
-        case .readyToWearDepartment:
-            return UIImage()
-        case .accessoriesDepartment:
-            return UIImage()
-        case .beautyDepartment:
-            return UIImage()
-        case .lingerieDepartment:
-            return UIImage()
-        }
+        return UIImage(named: self.rawValue)!
     }
 }

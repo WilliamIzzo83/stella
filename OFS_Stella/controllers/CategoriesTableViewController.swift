@@ -13,7 +13,7 @@ import UIKit
  * main category list, allowing user to navigate them. The controller is a 
  * specialization of ItemsListTableViewController.
  */
-class CategoriesTableViewController: ItemsListTableViewController {
+class CategoriesTableViewController: ItemsListTableViewController<DepartmentModel> {
     override func setupListController() {
         dataProvider = DepartmentDataProvider()
         binderDescriptorProvider = { _ in
@@ -26,7 +26,7 @@ class CategoriesTableViewController: ItemsListTableViewController {
         let selectedPath = tableView.indexPathForSelectedRow!        
         let item = self.item(at: selectedPath)
 
-        productListController.department = item as! DepartmentModel
+        productListController.department = item
     }
 }
 
@@ -34,8 +34,9 @@ class CategoriesTableViewController: ItemsListTableViewController {
 /// CategoriesTableViewController
 extension CategoriesTableViewController {
     fileprivate static let binderDescriptor =
-        CellBinderDescriptor(cellReuseId:.categoryCell) { (cell, model) in
-            let department = model as! DepartmentModel
-            cell.textLabel?.text = department.name
+        CellBinderDescriptor<DepartmentModel>(cellReuseId:.categoryCell) { (cell, model) in
+            let departmentCell = cell as! DepartmentTableViewCell
+            departmentCell.titleLabel.text = model.name
+            departmentCell.backgroundImageView.image = model.image.get()
     }
 }

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  OFS_Stella
+
+  Created by William Izzo on 15/07/2017.
+  Copyright © 2017 wizzo. All rights reserved.
+*/
+
+"ready_to_wear_title" = "Ready to wear";
+"accessories_title" = "Accessories";
+"beauty_title" = "Beauty";
+"lingerie_title" = "Lingerie";

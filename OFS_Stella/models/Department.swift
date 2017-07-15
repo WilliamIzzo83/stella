@@ -32,14 +32,11 @@ extension Department {
 }
 
 
-let DepartmentModelType = 2
 
-struct DepartmentModel : IDataModel {
+
+struct DepartmentModel {
     let name : String
     let image : AppImages
     let id : Department
-    static var type: Int {
-        return DepartmentModelType
-    }
 }
 

@@ -25,12 +25,9 @@ struct ProductColor : Codable {
         case id = "Id"
     }
 }
-let ProductModelType = 3
-struct ProductModel : IDataModel, Codable {
+
+struct ProductModel : Codable {
     
-    static var type: Int {
-        return ProductModelType
-    }
     
     let code8 : String
     let brandName : String

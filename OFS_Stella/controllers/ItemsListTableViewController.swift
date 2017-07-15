@@ -7,16 +7,16 @@
 //
 
 import UIKit
-
+typealias CellBindFunction<T> = (UITableViewCell, T) -> Void
 /**
  * This descriptor defines a struct used by items list view controller used
  * to know how to bind data to a specific cell view.
  */
-struct CellBinderDescriptor {
+struct CellBinderDescriptor<T> {
     /// Cell's reuse identifier for which the descriptor works.
     let cellReuseId : CellsIdentifiers
     /// Cell's bind function.
-    let bind : (UITableViewCell, IDataModel) -> Void
+    let bind : CellBindFunction<T>
 }
 
 
@@ -51,16 +51,18 @@ struct CellBinderDescriptor {
  * ItemsListTableViewController will be missing its *dataProvider* and its
  * *binderDescriptorProvider*, resulting in a runtime crash.
  */
-class ItemsListTableViewController: UITableViewController, IDataConsumer {
+class ItemsListTableViewController<T>: UITableViewController {
+    
+    
     /// The item's list extracted by data provider.
-    private var itemsList = [IDataModel]()
+    private var itemsList = [T]()
     
     /// A data provider that gets invoked on *viewDidLoad*.
-    var dataProvider : IDataProvider!
+    var dataProvider : GenericDataProvider<[T]>!
     
     /// Function invoked during *cellForRowAtIndexPath*. This will return a 
     /// binder descriptor used to customize cell's rendering and data binding.
-    var binderDescriptorProvider : ((IDataModel) -> CellBinderDescriptor)!
+    var binderDescriptorProvider : ((T) -> CellBinderDescriptor<T>)!
     
     
     override func viewDidLoad() {
@@ -76,7 +78,7 @@ class ItemsListTableViewController: UITableViewController, IDataConsumer {
     func setupListController() {}
     
     /// Returns an item from item's list
-    func item(at path:IndexPath) -> IDataModel {
+    func item(at path:IndexPath) -> T {
         return itemsList[path.row]
     }
     
@@ -84,6 +86,7 @@ class ItemsListTableViewController: UITableViewController, IDataConsumer {
     /// array gets filled and the underlying table view *reloadData* method is
     /// invoked.
     func consumeData() {
+        
         dataProvider.retrieveData { [weak self](data, error) in
             guard error == nil else {
                 return
@@ -94,7 +97,7 @@ class ItemsListTableViewController: UITableViewController, IDataConsumer {
             }
             
             DispatchQueue.main.async {
-                wself.itemsList = data
+                wself.itemsList = data ?? []
                 wself.tableView.reloadData()
             }
         }

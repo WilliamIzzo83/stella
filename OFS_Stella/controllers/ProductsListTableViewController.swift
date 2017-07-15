@@ -11,17 +11,21 @@ import UIKit
 /**
  * This controllers shows the product list associated to a specific category.
  */
-class ProductsListTableViewController : ItemsListTableViewController {
+class ProductsListTableViewController : ItemsListTableViewController<ProductModel> {
     /// Product's list category. This must be set before the data retrieve cycle
     /// begins.
     var department : DepartmentModel!
     
     override func setupListController() {
-        dataProvider = URLDataProvider.productsDataProvider(department: department.id)
+        
+        let provider = URLDataProvider<[ProductModel]>.productsDataProvider(department: department.id)
+        dataProvider = provider
         binderDescriptorProvider = { _ in
             return ProductsListTableViewController.binderDescriptor
         }
         
+        tableView.estimatedRowHeight = 88.0
+        tableView.rowHeight = UITableViewAutomaticDimension
         title = department.name
     }
     
@@ -30,15 +34,17 @@ class ProductsListTableViewController : ItemsListTableViewController {
         let selectedPath = tableView.indexPathForSelectedRow!
         let item = self.item(at: selectedPath)
         
-        productDetailController.product = item as! ProductModel
+        productDetailController.product = item
     }
 }
 
 /// Defines the binder descriptor for this controller
 extension ProductsListTableViewController {
     fileprivate static let binderDescriptor =
-        CellBinderDescriptor(cellReuseId:.productCell) { (cell, model) in
-            let fooModel = model as! ProductModel
-            cell.textLabel?.text = fooModel.modelNames
+        CellBinderDescriptor<ProductModel>(cellReuseId:.productCell) { (cell, model) in
+            let productCell = cell as! ProductTableViewCell
+            productCell.nameLabel.text = model.modelNames
+            productCell.priceLabel.text = "\(model.fullPrice)"
+            
     }
 }

@@ -39,8 +39,8 @@ struct ProductRequestResponse : Codable {
 }
 
 extension URLDataProvider {
-    static func productsDataProvider(department:Department) -> URLDataProvider {
-        return URLDataProvider(url: department.url(), decoder: { (data, readyCallback) in
+    static func productsDataProvider(department:Department) -> URLDataProvider<[ProductModel]> {
+        return URLDataProvider<[ProductModel]>(url: department.url(), decoder: { (data, readyCallback) in
             do {
                 let jsonDecoder = JSONDecoder()
                 let productRsp = try jsonDecoder.decode(ProductRequestResponse.self, from: data)
