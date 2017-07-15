@@ -7,18 +7,6 @@
 //
 
 import UIKit
-typealias CellBindFunction<T> = (UITableViewCell, T) -> Void
-/**
- * This descriptor defines a struct used by items list view controller used
- * to know how to bind data to a specific cell view.
- */
-struct CellBinderDescriptor<T> {
-    /// Cell's reuse identifier for which the descriptor works.
-    let cellReuseId : CellsIdentifiers
-    /// Cell's bind function.
-    let bind : CellBindFunction<T>
-}
-
 
 /**
  * ItemsListTableViewController provides a base class to manage application's
@@ -62,7 +50,7 @@ class ItemsListTableViewController<T>: UITableViewController {
     
     /// Function invoked during *cellForRowAtIndexPath*. This will return a 
     /// binder descriptor used to customize cell's rendering and data binding.
-    var binderDescriptorProvider : ((T) -> CellBinderDescriptor<T>)!
+    var binderDescriptorProvider : ((T) -> ViewModelBinderDescriptor<T>)!
     
     
     override func viewDidLoad() {

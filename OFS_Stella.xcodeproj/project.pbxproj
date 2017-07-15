@@ -22,6 +22,10 @@
 		3DFBD2E01F1A444E00899642 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3DFBD2E21F1A444E00899642 /* Localizable.strings */; };
 		3DFBD2E51F1A486900899642 /* DepartmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD2E41F1A486900899642 /* DepartmentTableViewCell.swift */; };
 		3DFBD2E71F1A4B3200899642 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD2E61F1A4B3200899642 /* ProductTableViewCell.swift */; };
+		3DFBD2EB1F1A646000899642 /* IListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD2EA1F1A646000899642 /* IListController.swift */; };
+		3DFBD2ED1F1A699D00899642 /* TableListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD2EC1F1A699D00899642 /* TableListViewController.swift */; };
+		3DFBD2EF1F1A6B8300899642 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD2EE1F1A6B8300899642 /* ViewModel.swift */; };
+		3DFBD2F11F1A720500899642 /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD2F01F1A720500899642 /* CollectionListViewController.swift */; };
 		F74A66B01F18F2300042B0FD /* URLDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66AF1F18F2300042B0FD /* URLDataProvider.swift */; };
 		F74A66B21F18FAEA0042B0FD /* ProductsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66B11F18FAEA0042B0FD /* ProductsDataProvider.swift */; };
 		F74A66B71F19038A0042B0FD /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66B61F19038A0042B0FD /* Department.swift */; };
@@ -61,6 +65,10 @@
 		3DFBD2E11F1A444E00899642 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3DFBD2E41F1A486900899642 /* DepartmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentTableViewCell.swift; sourceTree = "<group>"; };
 		3DFBD2E61F1A4B3200899642 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		3DFBD2EA1F1A646000899642 /* IListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IListController.swift; sourceTree = "<group>"; };
+		3DFBD2EC1F1A699D00899642 /* TableListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableListViewController.swift; sourceTree = "<group>"; };
+		3DFBD2EE1F1A6B8300899642 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		3DFBD2F01F1A720500899642 /* CollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewController.swift; sourceTree = "<group>"; };
 		F74A66AF1F18F2300042B0FD /* URLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLDataProvider.swift; path = dataProviders/URLDataProvider.swift; sourceTree = "<group>"; };
 		F74A66B11F18FAEA0042B0FD /* ProductsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsDataProvider.swift; path = dataProviders/ProductsDataProvider.swift; sourceTree = "<group>"; };
 		F74A66B61F19038A0042B0FD /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -159,6 +167,10 @@
 			isa = PBXGroup;
 			children = (
 				3D735A011F18060100E918C5 /* IDataProvider.swift */,
+				3DFBD2EA1F1A646000899642 /* IListController.swift */,
+				3DFBD2EC1F1A699D00899642 /* TableListViewController.swift */,
+				3DFBD2F01F1A720500899642 /* CollectionListViewController.swift */,
+				3DFBD2EE1F1A6B8300899642 /* ViewModel.swift */,
 			);
 			path = foundation;
 			sourceTree = "<group>";
@@ -301,17 +313,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F74A66C21F1911A10042B0FD /* AppStrings.swift in Sources */,
+				3DFBD2ED1F1A699D00899642 /* TableListViewController.swift in Sources */,
 				3DFBD2D91F1A2E1300899642 /* TableViewCellsIdentifiers.swift in Sources */,
 				3DFBD2DB1F1A2E1300899642 /* CategoriesTableViewController.swift in Sources */,
 				F74A66B21F18FAEA0042B0FD /* ProductsDataProvider.swift in Sources */,
 				F74A66B91F1909080042B0FD /* DepartmentDataProvider.swift in Sources */,
+				3DFBD2EB1F1A646000899642 /* IListController.swift in Sources */,
 				3DFBD2E71F1A4B3200899642 /* ProductTableViewCell.swift in Sources */,
 				3DFBD2DA1F1A2E1300899642 /* ItemsListTableViewController.swift in Sources */,
 				F74A66C01F190A1F0042B0FD /* Asset.swift in Sources */,
+				3DFBD2EF1F1A6B8300899642 /* ViewModel.swift in Sources */,
 				3D7359CA1F178D8900E918C5 /* AppDelegate.swift in Sources */,
 				3DF3A9FF1F193EB10051A095 /* ProductModel.swift in Sources */,
 				3DFBD2DD1F1A2E1300899642 /* ProductDetailViewController.swift in Sources */,
 				3D735A041F18060100E918C5 /* IDataProvider.swift in Sources */,
+				3DFBD2F11F1A720500899642 /* CollectionListViewController.swift in Sources */,
 				F74A66B01F18F2300042B0FD /* URLDataProvider.swift in Sources */,
 				F74A66BE1F1909D40042B0FD /* AppImages.swift in Sources */,
 				F74A66B71F19038A0042B0FD /* Department.swift in Sources */,

@@ -11,13 +11,12 @@ import UIKit
 /**
  * This controllers shows the product list associated to a specific category.
  */
-class ProductsListTableViewController : ItemsListTableViewController<ProductModel> {
+class ProductsListTableViewController : TableListViewController<ProductModel> {
     /// Product's list category. This must be set before the data retrieve cycle
     /// begins.
     var department : DepartmentModel!
     
-    override func setupListController() {
-        
+    override func setupListViewController() {
         let provider = URLDataProvider<[ProductModel]>.productsDataProvider(department: department.id)
         dataProvider = provider
         binderDescriptorProvider = { _ in
@@ -41,10 +40,11 @@ class ProductsListTableViewController : ItemsListTableViewController<ProductMode
 /// Defines the binder descriptor for this controller
 extension ProductsListTableViewController {
     fileprivate static let binderDescriptor =
-        CellBinderDescriptor<ProductModel>(cellReuseId:.productCell) { (cell, model) in
+        ViewModelBinderDescriptor<ProductModel>(cellReuseId:.productCell) { (cell, model) in
             let productCell = cell as! ProductTableViewCell
             productCell.nameLabel.text = model.modelNames
             productCell.priceLabel.text = "\(model.fullPrice)"
+            
             
     }
 }
