@@ -8,37 +8,42 @@
 
 import UIKit
 
+class ProductsDataSource : TableViewDataSource<ProductModel> {
+    override init() {
+        super.init()
+        cellIdProvider = { _ in
+            return CellsIdentifiers.productCell.rawValue
+        }
+        
+        viewModelProvider = {
+            let viewModel = ProductCellProductViewModel(product: $1)
+            return viewModel
+        }
+    }
+}
+
 /**
  * This controllers shows the product list associated to a specific category.
  */
-class ProductsListTableViewController : ItemsListTableViewController {
+class ProductsListTableViewController : GenericTableViewController<ProductModel> {
+    
     /// Product's list category. This must be set before the data retrieve cycle
     /// begins.
     var department : DepartmentModel!
     
-    override func setupListController() {
-        dataProvider = URLDataProvider.productsDataProvider(department: department.id)
-        binderDescriptorProvider = { _ in
-            return ProductsListTableViewController.binderDescriptor
-        }
-        
-        title = department.name
+    override func setupController() {
+        dataProvider = URLDataProvider<[ProductModel]>.productsDataProvider(department: department.id)
+        dataSource = ProductsDataSource()
+        tableView.estimatedRowHeight = 88.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let productDetailController = segue.destination as! ProductDetailViewController
+        let productDetailViewController = segue.destination as! ProductDetailViewController
         let selectedPath = tableView.indexPathForSelectedRow!
-        let item = self.item(at: selectedPath)
+        let item = self.dataSource.items[selectedPath.row]
         
-        productDetailController.product = item as! ProductModel
+        productDetailViewController.product = item
     }
 }
 
-/// Defines the binder descriptor for this controller
-extension ProductsListTableViewController {
-    fileprivate static let binderDescriptor =
-        CellBinderDescriptor(cellReuseId:.productCell) { (cell, model) in
-            let fooModel = model as! ProductModel
-            cell.textLabel?.text = fooModel.modelNames
-    }
-}

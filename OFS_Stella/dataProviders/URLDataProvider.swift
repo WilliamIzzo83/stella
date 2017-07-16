@@ -8,28 +8,18 @@
 
 import Foundation
 
-/**
- * Defines an interface for object that are able to decode a set of IDataModel
- * objects from raw data.
- */
-protocol IDataModelDecoder {
-    /**
-     * Begins data decoding. Once decoding ends the *didDecodeData* callback is
-     * invoked.
-     */
-    func decode(data:Data, didDecodeData:([IDataModel], Error?) -> Void)
-}
-
-/// Typealias for a function which transforms raw data into an array of 
+/// Typealias for a function which transforms raw data into an array of
 /// *IDataModel*
-typealias URLDataProviderDecoder = (_ data: Data, _ didDecodeData: (_ models:[IDataModel], _ error:Error?) -> Void) -> Void
+typealias URLDataProviderDecoder<T> = (_ data: Data, _ didDecodeData: (_ models:T, _ error:Error?) -> Void) -> Void
+
+extension URLSessionTask : DataProviderToken {}
 
 /**
  * URLDataProvider implements a data provider that retrieves the data from an
  * url. Once raw data is obtained from the url, the provider will pass through
  * a *dataModelDecoder* which decodes the data into an array of *IDataModel*.
  */
-class URLDataProvider : IDataProvider {
+class URLDataProvider<T> : GenericDataProvider<T, Void> {
     
     /// This is the url where data is located
     private var dataURL : URL
@@ -38,7 +28,7 @@ class URLDataProvider : IDataProvider {
     private var urlSession = URLSession(configuration: URLSessionConfiguration.ephemeral)
     
     /// This decodes data into an array of *IDataModel* when it gets ready.
-    var dataModelDecoder : URLDataProviderDecoder
+    var dataModelDecoder : URLDataProviderDecoder<T>
     
     /**
      * Initializes the url provider. 
@@ -46,18 +36,19 @@ class URLDataProvider : IDataProvider {
      * - parameter decoder: the designated decoder that transforms the raw data
      * into an array of *IDataModel* objects
      */
-    init(url:URL, decoder:@escaping URLDataProviderDecoder) {
+    init(url:URL, decoder:@escaping URLDataProviderDecoder<T>) {
         dataURL = url
         dataModelDecoder = decoder
     }
     
-    func retrieveData(didRetrieveDataCallback: @escaping ([IDataModel], Error?) -> Void) {
+    
+    override func retrieveData(request:(), didRetrieveDataCallback: @escaping (T?, Error?) -> Void) -> DataProviderToken {
         let task = urlSession.dataTask(with: dataURL) { [weak self](data, response, error) in
             guard error == nil else {
-                didRetrieveDataCallback([], error)
+                didRetrieveDataCallback(nil, error)
                 return
             }
-
+            
             // TODO: check http status code
             
             self?.dataModelDecoder(data!) {
@@ -66,5 +57,6 @@ class URLDataProvider : IDataProvider {
         }
         
         task.resume()
+        return task
     }
 }

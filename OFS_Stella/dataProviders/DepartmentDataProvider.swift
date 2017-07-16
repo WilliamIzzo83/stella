@@ -32,15 +32,14 @@ extension Department {
     }
 }
 
-class DepartmentDataProvider : IDataProvider {
-    
-    
-    func retrieveData(didRetrieveDataCallback: @escaping DataProviderCompletionCallback) {
+class DepartmentDataProvider : GenericDataProvider<[DepartmentModel], Void> {
+    override func retrieveData(request:(), didRetrieveDataCallback: @escaping ([DepartmentModel]?, Error?) -> Void) -> DataProviderToken {
         didRetrieveDataCallback([
             Department.readyToWear.model(),
             Department.accessories.model(),
             Department.beauty.model(),
             Department.lingerie.model()
             ], nil)
+        return 0
     }
 }
