@@ -16,12 +16,13 @@ protocol IListViewController : class {
     associatedtype ItemsType
     var items : [ItemsType] { get }
     var listView : IListView { get }
-    var dataProvider : GenericDataProvider<[ItemsType]>! { get set }
+    var dataProvider : GenericDataProvider<[ItemsType], Void>! { get set }
     
     func setupListViewController()
-    func item(at:IndexPath) -> ItemsType
+    func item(at indexPath:IndexPath) -> ItemsType
     func updateItems(items:[ItemsType])
     func handleError(error:Error)
+    func enqueueTaskForItem(at: IndexPath, task:ITask)
     
     func consumeData()
 }
@@ -32,7 +33,8 @@ extension IListViewController {
     }
     
     func consumeData() {
-        dataProvider.retrieveData { [weak self] in
+        _ =
+            dataProvider.retrieveData(request: Void() ) { [weak self] in
             guard let wself = self else {
                 return
             }

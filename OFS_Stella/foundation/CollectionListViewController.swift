@@ -12,12 +12,14 @@ import UIKit
 extension UICollectionView : IListView {}
 
 class CollectionListViewController<T> : UICollectionViewController, IListViewController {
+    
+    
     typealias ItemsType = T
     
     var privateItems_ : [ItemsType] = []
     var listView: IListView { return self.collectionView! }
-    var dataProvider: GenericDataProvider<[ItemsType]>!
-    var binderDescriptorProvider : ((ItemsType) -> ViewModelBinderDescriptor<ItemsType>)!
+    var dataProvider: GenericDataProvider<[ItemsType],Void>!
+    var binderDescriptorProvider : ((ItemsType) -> ViewModelBinderDescriptor<ItemsType, UICollectionView>)!
     
     var items: [ItemsType] {
         return privateItems_
@@ -36,6 +38,8 @@ class CollectionListViewController<T> : UICollectionViewController, IListViewCon
     func updateItems(items: [ItemsType]) {
         privateItems_ = items
     }
+    
+    func enqueueTaskForItem(at: IndexPath, task: ITask) {}
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -57,7 +61,7 @@ class CollectionListViewController<T> : UICollectionViewController, IListViewCon
             for: indexPath)
         
         
-        binderDesc.bind(cell, model)
+        binderDesc.bind(cell, model, collectionView)
         
         return cell
     }

@@ -11,7 +11,7 @@ import UIKit
 class ProductTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel : UILabel!
     @IBOutlet var priceLabel : UILabel!
-    @IBOutlet var thumbnailLabel : UIImageView!
+    @IBOutlet var thumbnailImageView : UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

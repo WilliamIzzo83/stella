@@ -34,7 +34,7 @@ class CategoriesTableViewController: TableListViewController<DepartmentModel> {
 /// CategoriesTableViewController
 extension CategoriesTableViewController {
     fileprivate static let binderDescriptor =
-        ViewModelBinderDescriptor<DepartmentModel>(cellReuseId:.categoryCell) { (cell, model) in
+        ViewModelBinderDescriptor<DepartmentModel, BinderPayload<DepartmentModel>>(cellReuseId:.categoryCell) { (cell, model, payload) in
             let departmentCell = cell as! DepartmentTableViewCell
             departmentCell.titleLabel.text = model.name
             departmentCell.backgroundImageView.image = model.image.get()

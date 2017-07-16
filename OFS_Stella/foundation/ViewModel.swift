@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 
-typealias ViewModelBindFunction<T> = (UIView, T) -> Void
+typealias ViewModelBindFunction<Model, ExtraData> = (UIView, Model, ExtraData) -> Void
 
 /**
  * This descriptor defines a struct used by items list view controller used
  * to know how to bind data to a specific cell view.
  */
-struct ViewModelBinderDescriptor<T> {
+struct ViewModelBinderDescriptor<Model, ExtraData> {
     /// Cell's reuse identifier for which the descriptor works.
     let cellReuseId : CellsIdentifiers
     /// Cell's bind function.
-    let bind : ViewModelBindFunction<T>
+    let bind : ViewModelBindFunction<Model, ExtraData>
 }

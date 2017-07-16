@@ -12,12 +12,14 @@ import Foundation
 /// *IDataModel*
 typealias URLDataProviderDecoder<T> = (_ data: Data, _ didDecodeData: (_ models:T, _ error:Error?) -> Void) -> Void
 
+extension URLSessionTask : DataProviderToken {}
+
 /**
  * URLDataProvider implements a data provider that retrieves the data from an
  * url. Once raw data is obtained from the url, the provider will pass through
  * a *dataModelDecoder* which decodes the data into an array of *IDataModel*.
  */
-class URLDataProvider<T> : GenericDataProvider<T> {
+class URLDataProvider<T> : GenericDataProvider<T, Void> {
     
     /// This is the url where data is located
     private var dataURL : URL
@@ -39,7 +41,8 @@ class URLDataProvider<T> : GenericDataProvider<T> {
         dataModelDecoder = decoder
     }
     
-    override func retrieveData(didRetrieveDataCallback: @escaping (T?, Error?) -> Void) {
+    
+    override func retrieveData(request:(), didRetrieveDataCallback: @escaping (T?, Error?) -> Void) -> DataProviderToken {
         let task = urlSession.dataTask(with: dataURL) { [weak self](data, response, error) in
             guard error == nil else {
                 didRetrieveDataCallback(nil, error)
@@ -54,5 +57,6 @@ class URLDataProvider<T> : GenericDataProvider<T> {
         }
         
         task.resume()
+        return task
     }
 }

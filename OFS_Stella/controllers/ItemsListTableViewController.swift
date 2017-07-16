@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 /**
  * ItemsListTableViewController provides a base class to manage application's
  * table view controllers. The class adopts IDataConsumer protocol, so that
@@ -115,4 +115,4 @@ class ItemsListTableViewController<T>: UITableViewController {
         return cell
     }
 
-}
+}*/
