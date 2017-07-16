@@ -8,35 +8,38 @@
 
 import UIKit
 
+class DepartmentsDataSource : TableViewDataSource<DepartmentModel> {
+    override init() {
+        super.init()
+        cellIdProvider = { _ in
+            return CellsIdentifiers.categoryCell.rawValue
+        }
+        
+        viewModelProvider = {
+            let viewModel = DepartmentCategoryCellViewModel(department:$1)
+            return viewModel
+        }
+    }
+}
+
 /**
  * This is the main view controller of the application. It renders application's
  * main category list, allowing user to navigate them. The controller is a 
  * specialization of ItemsListTableViewController.
  */
-class CategoriesTableViewController: TableListViewController<DepartmentModel> {
-    override func setupListViewController() {
+class CategoriesTableViewController: GenericTableViewController<DepartmentModel> {
+    override func setupController() {
         dataProvider = DepartmentDataProvider()
-        binderDescriptorProvider = { _ in
-            return CategoriesTableViewController.binderDescriptor
-        }
+        dataSource = DepartmentsDataSource()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let productListController = segue.destination as! ProductsListTableViewController
         let selectedPath = tableView.indexPathForSelectedRow!        
-        let item = self.item(at: selectedPath)
-
+        let item = self.dataSource.items[selectedPath.row]
+        
         productListController.department = item
     }
 }
 
-/// This extension defines binder descriptor used by
-/// CategoriesTableViewController
-extension CategoriesTableViewController {
-    fileprivate static let binderDescriptor =
-        ViewModelBinderDescriptor<DepartmentModel, BinderPayload<DepartmentModel>>(cellReuseId:.categoryCell) { (cell, model, payload) in
-            let departmentCell = cell as! DepartmentTableViewCell
-            departmentCell.titleLabel.text = model.name
-            departmentCell.backgroundImageView.image = model.image.get()
-    }
-}
+
