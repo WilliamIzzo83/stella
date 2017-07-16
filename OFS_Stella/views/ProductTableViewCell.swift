@@ -17,6 +17,8 @@ class ProductTableViewCell: UITableViewCell, DataBindable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        nameLabel.font = Fonts.body.get()
+        priceLabel.font = Fonts.headline.get()
     }
     
     deinit {

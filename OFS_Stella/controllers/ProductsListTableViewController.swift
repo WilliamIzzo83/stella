@@ -37,5 +37,13 @@ class ProductsListTableViewController : GenericTableViewController<ProductModel>
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let productDetailViewController = segue.destination as! ProductDetailViewController
+        let selectedPath = tableView.indexPathForSelectedRow!
+        let item = self.dataSource.items[selectedPath.row]
+        
+        productDetailViewController.product = item
+    }
 }
 

@@ -31,6 +31,7 @@ class CategoriesTableViewController: GenericTableViewController<DepartmentModel>
     override func setupController() {
         dataProvider = DepartmentDataProvider()
         dataSource = DepartmentsDataSource()
+        self.navigationItem.backBarButtonItem?.title = " "
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

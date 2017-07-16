@@ -12,7 +12,8 @@ import UIKit
 struct DepartmentCategoryCellViewModel : CategoryCellPresenter {
     private var department : DepartmentModel
     
-    var title: String { return self.department.name }
+    var title: String {
+        return self.department.name }
     var image: UIImage { return self.department.image.get() }
     
     init(department:DepartmentModel) {

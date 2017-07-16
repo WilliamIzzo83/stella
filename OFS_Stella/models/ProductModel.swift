@@ -27,8 +27,6 @@ struct ProductColor : Codable {
 }
 
 struct ProductModel : Codable {
-    
-    
     let code8 : String
     let brandName : String
     let defaultCode10 : String

@@ -15,7 +15,7 @@ struct ProductCellProductViewModel : ProductCellPresenter {
         self.product = product
     }
     
-    var name: String { return product.modelNames ?? "" }
-    var price: String { return "\(product.fullPrice) €" }
+    var name: String { return product.modelNames?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? "" }
+    var price: String { return product.fullPrice.ofsPriceFormatValue() }
     var imageRequest: ImageRequest { return ImageRequest.thumb(product.defaultCode10) }
 }

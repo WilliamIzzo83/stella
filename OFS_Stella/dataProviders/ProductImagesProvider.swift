@@ -20,10 +20,10 @@ extension ImageRequest {
         var dimensions : Int = 0
         switch self {
         case .detail(let id):
-            dimensions = 260
+            dimensions = 750
             productId = id
         case .thumb(let id):
-            dimensions = 750
+            dimensions = 260
             productId = id
         }
         

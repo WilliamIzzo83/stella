@@ -12,6 +12,11 @@ class CategoryTableViewCell: UITableViewCell, DataBindable {
     @IBOutlet var titleLabel : UILabel!
     @IBOutlet var backgroundImageView : UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        titleLabel.font = Fonts.body.get()
+    }
+    
     func bind(to presenter: Presenter) {
         let cellPresenter = presenter as! CategoryCellPresenter
         titleLabel.text = cellPresenter.title

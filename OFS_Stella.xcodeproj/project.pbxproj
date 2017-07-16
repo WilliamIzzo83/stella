@@ -31,6 +31,10 @@
 		3DFBD33F1F1B8D7A00899642 /* ProductCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD33E1F1B8D7A00899642 /* ProductCellPresenter.swift */; };
 		3DFBD3411F1B8DE400899642 /* ProductCellProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD3401F1B8DE400899642 /* ProductCellProductViewModel.swift */; };
 		3DFBD3441F1B95EB00899642 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD3431F1B95EB00899642 /* AppServices.swift */; };
+		3DFBD3461F1BA4DB00899642 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD3451F1BA4DB00899642 /* DetailView.swift */; };
+		3DFBD3481F1BA54800899642 /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD3471F1BA54800899642 /* DetailViewPresenter.swift */; };
+		3DFBD34A1F1BA5D500899642 /* DetailViewProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD3491F1BA5D500899642 /* DetailViewProductViewModel.swift */; };
+		3DFBD34C1F1BEDD000899642 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFBD34B1F1BEDD000899642 /* Fonts.swift */; };
 		F74A66B01F18F2300042B0FD /* URLDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66AF1F18F2300042B0FD /* URLDataProvider.swift */; };
 		F74A66B21F18FAEA0042B0FD /* ProductsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66B11F18FAEA0042B0FD /* ProductsDataProvider.swift */; };
 		F74A66B71F19038A0042B0FD /* Department.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74A66B61F19038A0042B0FD /* Department.swift */; };
@@ -79,6 +83,10 @@
 		3DFBD33E1F1B8D7A00899642 /* ProductCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellPresenter.swift; sourceTree = "<group>"; };
 		3DFBD3401F1B8DE400899642 /* ProductCellProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellProductViewModel.swift; sourceTree = "<group>"; };
 		3DFBD3431F1B95EB00899642 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		3DFBD3451F1BA4DB00899642 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		3DFBD3471F1BA54800899642 /* DetailViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewPresenter.swift; sourceTree = "<group>"; };
+		3DFBD3491F1BA5D500899642 /* DetailViewProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewProductViewModel.swift; sourceTree = "<group>"; };
+		3DFBD34B1F1BEDD000899642 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Fonts.swift; path = assets/Fonts.swift; sourceTree = "<group>"; };
 		F74A66AF1F18F2300042B0FD /* URLDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = URLDataProvider.swift; path = dataProviders/URLDataProvider.swift; sourceTree = "<group>"; };
 		F74A66B11F18FAEA0042B0FD /* ProductsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsDataProvider.swift; path = dataProviders/ProductsDataProvider.swift; sourceTree = "<group>"; };
 		F74A66B61F19038A0042B0FD /* Department.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Department.swift; sourceTree = "<group>"; };
@@ -202,6 +210,7 @@
 			children = (
 				3DFBD2E41F1A486900899642 /* CategoryTableViewCell.swift */,
 				3DFBD2E61F1A4B3200899642 /* ProductTableViewCell.swift */,
+				3DFBD3451F1BA4DB00899642 /* DetailView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -211,6 +220,7 @@
 			children = (
 				3DFBD3391F1B779800899642 /* DepartmentCategoryCellViewModel.swift */,
 				3DFBD3401F1B8DE400899642 /* ProductCellProductViewModel.swift */,
+				3DFBD3491F1BA5D500899642 /* DetailViewProductViewModel.swift */,
 			);
 			path = viewModels;
 			sourceTree = "<group>";
@@ -220,6 +230,7 @@
 			children = (
 				3DFBD33C1F1B77E600899642 /* CategoryCellPresenter.swift */,
 				3DFBD33E1F1B8D7A00899642 /* ProductCellPresenter.swift */,
+				3DFBD3471F1BA54800899642 /* DetailViewPresenter.swift */,
 			);
 			path = presenters;
 			sourceTree = "<group>";
@@ -239,6 +250,7 @@
 				F74A66BD1F1909D40042B0FD /* AppImages.swift */,
 				F74A66C11F1911A10042B0FD /* AppStrings.swift */,
 				3DFBD2E21F1A444E00899642 /* Localizable.strings */,
+				3DFBD34B1F1BEDD000899642 /* Fonts.swift */,
 			);
 			name = assets;
 			sourceTree = "<group>";
@@ -357,6 +369,8 @@
 				3DFBD2DB1F1A2E1300899642 /* CategoriesTableViewController.swift in Sources */,
 				F74A66B21F18FAEA0042B0FD /* ProductsDataProvider.swift in Sources */,
 				3DFBD3351F1B725700899642 /* DataBindable.swift in Sources */,
+				3DFBD3481F1BA54800899642 /* DetailViewPresenter.swift in Sources */,
+				3DFBD34A1F1BA5D500899642 /* DetailViewProductViewModel.swift in Sources */,
 				F74A66B91F1909080042B0FD /* DepartmentDataProvider.swift in Sources */,
 				3DFBD2E71F1A4B3200899642 /* ProductTableViewCell.swift in Sources */,
 				F74A66C01F190A1F0042B0FD /* Asset.swift in Sources */,
@@ -365,11 +379,13 @@
 				3D7359CA1F178D8900E918C5 /* AppDelegate.swift in Sources */,
 				3DF3A9FF1F193EB10051A095 /* ProductModel.swift in Sources */,
 				3DFBD3331F1B71CF00899642 /* Presenter.swift in Sources */,
+				3DFBD34C1F1BEDD000899642 /* Fonts.swift in Sources */,
 				3DFBD2DD1F1A2E1300899642 /* ProductDetailViewController.swift in Sources */,
 				3D735A041F18060100E918C5 /* IDataProvider.swift in Sources */,
 				F74A66B01F18F2300042B0FD /* URLDataProvider.swift in Sources */,
 				3DFBD3411F1B8DE400899642 /* ProductCellProductViewModel.swift in Sources */,
 				3DFBD3311F1B71B100899642 /* TableViewDataSource.swift in Sources */,
+				3DFBD3461F1BA4DB00899642 /* DetailView.swift in Sources */,
 				F74A66BE1F1909D40042B0FD /* AppImages.swift in Sources */,
 				F74A66B71F19038A0042B0FD /* Department.swift in Sources */,
 				3DFBD2DC1F1A2E1300899642 /* ProductsListTableViewController.swift in Sources */,

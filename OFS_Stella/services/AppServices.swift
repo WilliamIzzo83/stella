@@ -11,3 +11,10 @@ import Foundation
 class AppServices {
     static let imagesProvider = ProductImagesProvider()
 }
+
+
+extension Int {
+    func ofsPriceFormatValue() -> String {
+        return "€ \(NumberFormatter.localizedString(from:NSNumber(value:self), number: .decimal))"
+    }
+}
