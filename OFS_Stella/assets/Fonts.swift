@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Declares application's fonts.
+ */
 enum Fonts {
     case title
     case headline

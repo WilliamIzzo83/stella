@@ -39,7 +39,7 @@ class ProductImagesProvider : GenericDataProvider<UIImage, ImageRequest> {
     private var runningTasks = [Int:URLSessionTask]()
     private var nextTaskId : Int = 0
     
-    override func retrieveData(request:ImageRequest,
+    override func requestData(request:ImageRequest,
                                didRetrieveDataCallback: @escaping (UIImage?, Error?) -> Void) -> DataProviderToken {
         let url = request.url()
         let taskId = nextTaskId.advanced(by: 1)

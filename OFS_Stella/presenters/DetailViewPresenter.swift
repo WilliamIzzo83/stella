@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol DetailViewPresenter : Presenter {
+protocol DetailViewPresenter : ViewModel {
     var title : String { get }
     var subtitle : String { get }
     var subhead : String { get }

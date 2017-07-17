@@ -40,12 +40,12 @@ class ProductTableViewCell: UITableViewCell, DataBindable {
         imagesProvider.cancelRequest(token: currentImageTask)
     }
     
-    func bind(to presenter: Presenter) {
+    func bind(to presenter: ViewModel) {
         let productCellPresenter = presenter as! ProductCellPresenter
         nameLabel.text = productCellPresenter.name
         priceLabel.text = productCellPresenter.price
         currentRetrieveDataRequest = imagesProvider
-            .retrieveData(request: productCellPresenter.imageRequest) { image, error in
+            .requestData(request: productCellPresenter.imageRequest) { image, error in
                 DispatchQueue.main.async { [weak self] in 
                     self?.thumbnailImageView.image = image
                 }

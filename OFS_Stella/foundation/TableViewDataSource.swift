@@ -12,14 +12,14 @@ import UIKit
 protocol IDataSource {
     associatedtype T
     var items : [T] { get }
-    var viewModelProvider : ((IndexPath, T) -> Presenter)! { get }
+    var viewModelProvider : ((IndexPath, T) -> ViewModel)! { get }
     var cellIdProvider : ((IndexPath) -> String)! { get }
 }
 
 class TableViewDataSource<T> : NSObject, IDataSource, UITableViewDataSource {
     
     var items: [T] = []
-    var viewModelProvider : ((IndexPath, T) -> Presenter)!
+    var viewModelProvider : ((IndexPath, T) -> ViewModel)!
     var cellIdProvider : ((IndexPath) -> String)!
     
     @available(iOS 2.0, *)
