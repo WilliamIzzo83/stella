@@ -45,11 +45,35 @@ extension ImageRequest {
 
 /**
  * This class performs request toward the api to retrieve product's images.
+ * The implementation takes advantage of NSURLCache in order to perform image
+ * caching. Caching strategy is set up so that if there are a cached image
+ * request, image is taken from there. Otherwise the request is sent to the api.
  */
 class ProductImagesProvider : GenericDataProvider<UIImage, ImageRequest> {
-    private let session = URLSession(configuration: .default)
+    private let session : URLSession //= URLSession(configuration: .default)
     private var runningTasks = [Int:URLSessionTask]()
     private var nextTaskId : Int = 0
+    
+    /// Initializes the product images provider and pass some hints about cache
+    /// size capacity.
+    /// - parameter memoryCacheCapacityMb: the capacity of the cache in memory,
+    /// in megabytes.
+    /// - parameter diskCacheCapacityMb: the capacity of the cache stored on
+    /// disk.
+    init(memoryCacheCapacityMb:Int, diskCacheCapacityMb:Int) {
+        let conf = URLSessionConfiguration.default
+        conf.urlCache = URLCache(memoryCapacity: memoryCacheCapacityMb * 1024 * 1024,
+                                 diskCapacity: memoryCacheCapacityMb * 1024 * 1024,
+                                 diskPath: "com.stella.imagesCache")
+        conf.requestCachePolicy = .returnCacheDataElseLoad
+        
+        session = URLSession(configuration:conf)
+    }
+    
+    /// Returns a default images provider instance.
+    static func `default`() -> ProductImagesProvider {
+        return ProductImagesProvider(memoryCacheCapacityMb:15, diskCacheCapacityMb:20)
+    }
     
     /// Requests a product image.
     /// - parameter request: the image request.
