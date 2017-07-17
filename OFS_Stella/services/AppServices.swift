@@ -13,7 +13,7 @@ import Foundation
  */
 class AppServices {
     /// Shared umage provider used among application's components
-    static let imagesProvider = ProductImagesProvider()
+    static let imagesProvider = ProductImagesProvider.default()
 }
 
 
