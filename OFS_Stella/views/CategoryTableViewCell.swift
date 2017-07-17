@@ -8,8 +8,13 @@
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell, DataBindable {
+/**
+ * Cell used to display categories.
+ */
+class CategoryTableViewCell: UITableViewCell, ViewModelBindable {
+    /// Label that displays category's title
     @IBOutlet var titleLabel : UILabel!
+    /// Image view containing category image.
     @IBOutlet var backgroundImageView : UIImageView!
     
     override func awakeFromNib() {
@@ -18,7 +23,7 @@ class CategoryTableViewCell: UITableViewCell, DataBindable {
     }
     
     func bind(to presenter: ViewModel) {
-        let cellPresenter = presenter as! CategoryCellPresenter
+        let cellPresenter = presenter as! CategoryCellViewModelInterface
         titleLabel.text = cellPresenter.title
         backgroundImageView.image = cellPresenter.image
     }

@@ -8,10 +8,17 @@
 
 import UIKit
 
-class DetailView: UIView, DataBindable {
+/**
+ * View used to show product's details.
+ */
+class DetailView: UIView, ViewModelBindable {
+    /// Image view containing product's image.
     @IBOutlet var imageView : UIImageView!
+    /// Label containing product's title.
     @IBOutlet var titleLabel : UILabel!
+    /// Subheading label. Used to display a product's attribute.
     @IBOutlet var subheadingLabel : UILabel!
+    /// Subheading label. Used to display a product's attribute.
     @IBOutlet var subtitleLabel : UILabel!
     
     override func awakeFromNib() {
@@ -22,7 +29,7 @@ class DetailView: UIView, DataBindable {
     }
     
     func bind(to presenter: ViewModel) {
-        let detailPresenter = presenter as! DetailViewPresenter
+        let detailPresenter = presenter as! DetailViewModelInterface
         titleLabel.text = detailPresenter.title
         subtitleLabel.text = detailPresenter.subtitle
         subheadingLabel.text = detailPresenter.subhead
