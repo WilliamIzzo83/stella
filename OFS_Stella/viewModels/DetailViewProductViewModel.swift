@@ -8,7 +8,10 @@
 
 import Foundation
 
-class DetailViewProductViewModel : DetailViewPresenter {
+/**
+ * View model used to bind a product with product's detail view.
+ */
+class DetailViewProductViewModel : DetailViewModelInterface {
     
     private let product : ProductModel
     

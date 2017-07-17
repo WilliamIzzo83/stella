@@ -81,7 +81,7 @@ class SomeTableViewCell: UITableViewCell {
 
 For here on the code con bind any kind of data to the cell, as long as the viewModelInterface is provided.
 
-## Putting it all togheter
+## Putting it all together
 With *data providers* and *mvvm* pattern put in place the application development becomes a matter of connecting dots.
 
 ### Detail screen

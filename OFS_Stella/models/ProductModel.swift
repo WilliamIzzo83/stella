@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Struct defining product's size. It follows products api definition.
 struct ProductSizes : Codable {
     let text : String
     let classFamily : String
@@ -18,6 +19,7 @@ struct ProductSizes : Codable {
     }
 }
 
+/// Struct defining product's color. It follows products api definition.
 struct ProductColor : Codable {
     let id : Int
     
@@ -26,6 +28,7 @@ struct ProductColor : Codable {
     }
 }
 
+/// Model representing a product. It follows products api definition.
 struct ProductModel : Codable {
     let code8 : String
     let brandName : String

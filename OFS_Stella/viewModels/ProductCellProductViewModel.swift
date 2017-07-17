@@ -8,7 +8,10 @@
 
 import Foundation
 
-struct ProductCellProductViewModel : ProductCellPresenter {
+/**
+ * View model used to bind product model with product cell.
+ */
+struct ProductCellProductViewModel : ProductCellViewModelInterface {
     private var product : ProductModel
     
     init(product:ProductModel) {

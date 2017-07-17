@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-struct DepartmentCategoryCellViewModel : CategoryCellPresenter {
+/**
+ * View model used to bind a department model with category cell.
+ */
+struct DepartmentCategoryCellViewModel : CategoryCellViewModelInterface {
     private var department : DepartmentModel
     
     var title: String {

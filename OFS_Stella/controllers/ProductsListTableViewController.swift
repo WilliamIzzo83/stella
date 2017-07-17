@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+ * A table view data source defining the behavior to display a department's
+ * products into a table view.
+ */
 class ProductsDataSource : TableViewDataSource<ProductModel> {
     override init() {
         super.init()
@@ -38,6 +42,7 @@ class ProductsListTableViewController : GenericTableViewController<ProductModel>
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
+    /// Prepares transition toward product detail screen.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let productDetailViewController = segue.destination as! ProductDetailViewController
         let selectedPath = tableView.indexPathForSelectedRow!
