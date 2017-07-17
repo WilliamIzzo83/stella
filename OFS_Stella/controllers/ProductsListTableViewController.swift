@@ -32,7 +32,7 @@ class ProductsListTableViewController : GenericTableViewController<ProductModel>
     var department : DepartmentModel!
     
     override func setupController() {
-        dataProvider = URLDataProvider<[ProductModel]>.productsDataProvider(department: department.id)
+        dataProvider = HTTPDataProvider<[ProductModel]>.productsDataProvider(department: department.id)
         dataSource = ProductsDataSource()
         tableView.estimatedRowHeight = 88.0
         tableView.rowHeight = UITableViewAutomaticDimension

@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import UIKit
+
 
 protocol DataBindable {
-    func bind(to presenter:Presenter)
+    func bind(to viewModel:ViewModel)
 }
+

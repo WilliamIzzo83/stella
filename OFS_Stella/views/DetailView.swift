@@ -21,7 +21,7 @@ class DetailView: UIView, DataBindable {
         subheadingLabel.font = Fonts.macrocategory.get()
     }
     
-    func bind(to presenter: Presenter) {
+    func bind(to presenter: ViewModel) {
         let detailPresenter = presenter as! DetailViewPresenter
         titleLabel.text = detailPresenter.title
         subtitleLabel.text = detailPresenter.subtitle
@@ -29,7 +29,7 @@ class DetailView: UIView, DataBindable {
         _ = 
         AppServices
             .imagesProvider
-            .retrieveData(request: detailPresenter.imageRequest) { image, error in
+            .requestData(request: detailPresenter.imageRequest) { image, error in
                 DispatchQueue.main.async { [weak self] in
                     self?.imageView.image = image
                 }
