@@ -22,14 +22,17 @@ protocol DataProviderToken {}
  * data.
  */
 protocol IDataProvider {
+    /// Data carried by provider.
     associatedtype ProviderDataType
+    /// Request's data type.
     associatedtype DataRequestPayloadType
     /**
      * Tells provider to get its specific data.
+     * - parameter request: contains provider specific request parameter.
      * - parameter didRetrieveDataCallback: callback invoked once that retrieve 
      * data process did end.
      */
-    func retrieveData(request:DataRequestPayloadType,
+    func requestData(request:DataRequestPayloadType,
                       didRetrieveDataCallback:@escaping DataProviderCompletionCallback<ProviderDataType>) -> DataProviderToken
     
     func cancelRequest(token:DataProviderToken)
@@ -45,7 +48,7 @@ extension Int : DataProviderToken {}
 class GenericDataProvider<T,U> : IDataProvider {
     typealias ProviderDataType = T
     typealias DataRequestPayloadType = U
-    func retrieveData(request:DataRequestPayloadType,
+    func requestData(request:DataRequestPayloadType,
                       didRetrieveDataCallback: @escaping (T?, Error?) -> Void) -> DataProviderToken { return 0 }
     
     func cancelRequest(token: DataProviderToken) {}

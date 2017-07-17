@@ -19,7 +19,7 @@ extension URLSessionTask : DataProviderToken {}
  * url. Once raw data is obtained from the url, the provider will pass through
  * a *dataModelDecoder* which decodes the data into an array of *IDataModel*.
  */
-class URLDataProvider<T> : GenericDataProvider<T, Void> {
+class HTTPDataProvider<T> : GenericDataProvider<T, Void> {
     
     /// This is the url where data is located
     private var dataURL : URL
@@ -42,7 +42,7 @@ class URLDataProvider<T> : GenericDataProvider<T, Void> {
     }
     
     
-    override func retrieveData(request:(), didRetrieveDataCallback: @escaping (T?, Error?) -> Void) -> DataProviderToken {
+    override func requestData(request:(), didRetrieveDataCallback: @escaping (T?, Error?) -> Void) -> DataProviderToken {
         let task = urlSession.dataTask(with: dataURL) { [weak self](data, response, error) in
             guard error == nil else {
                 didRetrieveDataCallback(nil, error)

@@ -33,7 +33,7 @@ extension Department {
 }
 
 class DepartmentDataProvider : GenericDataProvider<[DepartmentModel], Void> {
-    override func retrieveData(request:(), didRetrieveDataCallback: @escaping ([DepartmentModel]?, Error?) -> Void) -> DataProviderToken {
+    override func requestData(request:(), didRetrieveDataCallback: @escaping ([DepartmentModel]?, Error?) -> Void) -> DataProviderToken {
         didRetrieveDataCallback([
             Department.readyToWear.model(),
             Department.accessories.model(),

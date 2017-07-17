@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ * Declares application's strings.
+ */
 enum AppStrings : String {
     case readyToWearTitle = "ready_to_wear_title"
     case accessoriesTitle = "accessories_title"

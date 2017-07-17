@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol CategoryCellPresenter : Presenter {
+protocol CategoryCellPresenter : ViewModel {
     var title : String { get }
     var image : UIImage { get }
 }
