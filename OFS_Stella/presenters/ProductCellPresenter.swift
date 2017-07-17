@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ProductCellPresenter : Presenter {
+protocol ProductCellPresenter : ViewModel {
     var name : String { get }
     var price : String { get }
     var imageRequest : ImageRequest { get }

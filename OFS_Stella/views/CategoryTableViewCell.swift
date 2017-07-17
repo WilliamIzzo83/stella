@@ -17,7 +17,7 @@ class CategoryTableViewCell: UITableViewCell, DataBindable {
         titleLabel.font = Fonts.body.get()
     }
     
-    func bind(to presenter: Presenter) {
+    func bind(to presenter: ViewModel) {
         let cellPresenter = presenter as! CategoryCellPresenter
         titleLabel.text = cellPresenter.title
         backgroundImageView.image = cellPresenter.image

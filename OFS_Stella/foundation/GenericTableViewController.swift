@@ -21,7 +21,7 @@ class GenericTableViewController<T>: UITableViewController {
         
         _ =
         dataProvider
-            .retrieveData(request: Void()) { [weak self] (items, error) in
+            .requestData(request: Void()) { [weak self] (items, error) in
                 DispatchQueue.main.async {
                     self?.dataSource.items = items!
                     self?.tableView.reloadData()
