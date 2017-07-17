@@ -8,10 +8,21 @@
 
 import UIKit
 
+/**
+ * A generic table view controller implementation. Subclasses may define its
+ * behavior by assigning *dataProvider* and dataSource properties
+ * - SeeAlso: `GenericDataProvider<T,U>`
+ * - SeeAlso: `TableViewDataSource<T>`
+ */
 class GenericTableViewController<T>: UITableViewController {
+    /// Provider used to retrieve table view controller's data
     var dataProvider : GenericDataProvider<[T], Void>!
+    
+    /// Data source in charge of display the data.
     var dataSource : TableViewDataSource<T>!
     
+    /// Function called during *viewDidLoad()*. This allows subclasses to
+    /// configure the controller's dataProvider and dataSource.
     func setupController() {}
     
     override func viewDidLoad() {

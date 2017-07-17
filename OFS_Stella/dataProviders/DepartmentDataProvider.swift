@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+/// Defines department's data. For the sake of the concept this is hardcoded.
 extension Department {
     func model() -> DepartmentModel {
         switch self {
@@ -32,6 +32,9 @@ extension Department {
     }
 }
 
+/**
+ * Retrieves sotre department's data.
+ */
 class DepartmentDataProvider : GenericDataProvider<[DepartmentModel], Void> {
     override func requestData(request:(), didRetrieveDataCallback: @escaping ([DepartmentModel]?, Error?) -> Void) -> DataProviderToken {
         didRetrieveDataCallback([

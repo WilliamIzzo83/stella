@@ -9,6 +9,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Defines store's departments.
+ */
 enum Department {
     case readyToWear
     case accessories
@@ -17,6 +20,7 @@ enum Department {
 }
 
 extension Department {
+    /// Gets the api url to retrieve department's data.
     func url() -> URL{
         switch self {
         case .readyToWear:
@@ -31,12 +35,13 @@ extension Department {
     }
 }
 
-
-
-
+/// Model representing a department.
 struct DepartmentModel {
+    /// Department's name.
     let name : String
+    /// Department's image, taken from application's assets
     let image : AppImages
+    /// Department identifier.
     let id : Department
 }
 

@@ -21,7 +21,10 @@ enum Fonts {
 
 extension Fonts : Asset {
     typealias T = UIFont
-    
+    /**
+     * - Warning: the get function is a little bit crowded with ios version
+     * control in order to support font displaying on ios8.
+     */
     func get() -> UIFont {
         switch self {
         case .title:
