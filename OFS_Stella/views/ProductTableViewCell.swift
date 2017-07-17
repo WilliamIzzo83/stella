@@ -8,12 +8,28 @@
 
 import UIKit
 
-class ProductTableViewCell: UITableViewCell, DataBindable {
+/**
+ * A used to display products.
+ */
+class ProductTableViewCell: UITableViewCell, ViewModelBindable {
+    /// Label that displays product's name.
     @IBOutlet var nameLabel : UILabel!
+    
+    /// Label that displays product's price label.
     @IBOutlet var priceLabel : UILabel!
+    
+    /// Image view containing product's thumbnail image.
     @IBOutlet var thumbnailImageView : UIImageView!
+    
+    /// Thumbnail image is loaded from the images provider: this variable
+    /// contains the token identifier of the current request. This is used so
+    /// that when cell gets reused, the implementation has a chance to cancel
+    /// a previous load request.
     private var currentRetrieveDataRequest : DataProviderToken?
-    private var imagesProvider = AppServices.imagesProvider
+    
+    /// A reference to the shared images provider
+    /// - SeeAlso: ProductImagesProvider
+    private let imagesProvider = AppServices.imagesProvider
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,7 +57,7 @@ class ProductTableViewCell: UITableViewCell, DataBindable {
     }
     
     func bind(to presenter: ViewModel) {
-        let productCellPresenter = presenter as! ProductCellPresenter
+        let productCellPresenter = presenter as! ProductCellViewModelInterface
         nameLabel.text = productCellPresenter.name
         priceLabel.text = productCellPresenter.price
         currentRetrieveDataRequest = imagesProvider

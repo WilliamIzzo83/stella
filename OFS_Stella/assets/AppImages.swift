@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /**
- * Declares application's static images
+ * Declares application's static images.
  */
 enum AppImages : String {
     case readyToWearDepartment = "readytowear"

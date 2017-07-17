@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Struct representing API Header data field. Used for api's data decoding.
 struct RequestResponseHeader : Codable {
     let statusCode : Int
     let description : String
@@ -18,6 +19,7 @@ struct RequestResponseHeader : Codable {
     }
 }
 
+/// Struct representing ResultsLite field. Used for api's data decoding.
 struct ResultsLiteResponse : Codable {
     let totalResults : Int
     let items : [ProductModel]
@@ -28,6 +30,7 @@ struct ResultsLiteResponse : Codable {
     }
 }
 
+/// Strict representing the whole api's product data. Used for decoding.
 struct ProductRequestResponse : Codable {
     let header : RequestResponseHeader
     let resultsLite : ResultsLiteResponse
@@ -39,6 +42,7 @@ struct ProductRequestResponse : Codable {
 }
 
 extension HTTPDataProvider {
+    /// Returns a data provider that retrieves products from the remote api
     static func productsDataProvider(department:Department) -> HTTPDataProvider<[ProductModel]> {
         return HTTPDataProvider<[ProductModel]>(url: department.url(), decoder: { (data, readyCallback) in
             do {

@@ -8,6 +8,10 @@
 
 import UIKit
 
+/**
+ * A table view data source defining the behavior to display departments in a
+ * table view.
+ */
 class DepartmentsDataSource : TableViewDataSource<DepartmentModel> {
     override init() {
         super.init()
@@ -34,6 +38,7 @@ class CategoriesTableViewController: GenericTableViewController<DepartmentModel>
         self.navigationItem.backBarButtonItem?.title = " "
     }
     
+    /// Handles the transition toward department's product list.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let productListController = segue.destination as! ProductsListTableViewController
         let selectedPath = tableView.indexPathForSelectedRow!        

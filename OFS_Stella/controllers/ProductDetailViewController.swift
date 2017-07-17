@@ -8,8 +8,13 @@
 
 import UIKit
 
+/**
+ * A view controller that displays a product detail screen
+ */
 class ProductDetailViewController: UIViewController {
+    /// Displayed product
     var product : ProductModel!
+    /// View displaying the product.
     @IBOutlet var detailView : DetailView!
     
     override func viewDidLoad() {
