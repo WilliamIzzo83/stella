@@ -16,6 +16,7 @@ enum AppStrings : String {
     case accessoriesTitle = "accessories_title"
     case beautyTitle = "beauty_title"
     case lingerieTitle = "lingerie_title"
+    case notReachable = "not_reachable"
 }
 
 extension AppStrings : Asset {
