@@ -78,16 +78,53 @@
             </objects>
             <point key="canvasLocation" x="188.40579710144928" y="35.869565217391305"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Connectivity Not Reachable View Controller-->
+        <scene sceneID="5gL-5L-gde">
+            <objects>
+                <viewController id="X6K-1j-OAZ" customClass="ConnectivityNotReachableViewController" customModule="OFS_Stella" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Koc-hq-ART"/>
+                        <viewControllerLayoutGuide type="bottom" id="y8u-DF-3Qy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3yk-NH-Dic">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not reachable" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6W-df-x0W">
+                                <rect key="frame" x="16" y="600.5" width="250.5" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y8u-DF-3Qy" firstAttribute="top" secondItem="Z6W-df-x0W" secondAttribute="bottom" constant="16" id="J7M-uM-OWG"/>
+                            <constraint firstItem="Z6W-df-x0W" firstAttribute="leading" secondItem="3yk-NH-Dic" secondAttribute="leading" constant="16" id="Oe5-Kc-bQv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Z6W-df-x0W" secondAttribute="trailing" constant="64" id="UZn-M6-kCv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Z6W-df-x0W" id="dQq-IC-PpG"/>
+                        <segue destination="gmV-P9-Fv3" kind="unwind" identifier="reachability_restored" unwindAction="handleReachabilityWithSegue:" id="lHF-Cu-lb6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mg5-d5-mDi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gmV-P9-Fv3" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-628" y="788"/>
+        </scene>
+        <!--App Navigation View Controller-->
         <scene sceneID="2Fk-Fx-a2t">
             <objects>
-                <navigationController id="A1F-0N-ybl" sceneMemberID="viewController">
+                <navigationController id="A1F-0N-ybl" customClass="AppNavigationViewController" customModule="OFS_Stella" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jdg-ku-9uH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
                         <segue destination="e6M-Jf-tRB" kind="relationship" relationship="rootViewController" id="8VY-Sr-ojm"/>
+                        <segue destination="X6K-1j-OAZ" kind="presentation" identifier="reachability_gone" id="cEe-7G-UXY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IsO-Nd-Hhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
