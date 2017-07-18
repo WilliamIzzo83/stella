@@ -9,6 +9,11 @@
 import Foundation
 import UIKit
 
+/**
+ * This class handles animation's transition. It will take a snapshot of the
+ * source view controller's view , adds a blur layer and then puts
+ * destination view controller's view on top of it.
+ */
 class BlurTransition : NSObject, UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning {
     private var isPresenting = false
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
