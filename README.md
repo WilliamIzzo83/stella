@@ -4,6 +4,18 @@ Stella is a sample fashion application featuring the classic master detail patte
 
 This is the basic concept, the document will describe the application from an architecture standpoint. Specific implementation details can be found in code documentation.
 
+## Installation
+
+Application has been written using XCode 9.0 beta 2. The code requires Swift 4.0 to be compiled. As far as iOS is concerned, the compatibility is set to support devices with iOS version >= 8.0.
+
+Cocoapods has been used to import ReachabilitySwift dependency. Therefore as soon as the repository is cloned, it is required to run
+
+```sh
+pod install
+```
+
+from the root directory.
+
 ## Architecture
 
 Application's architecture stands upon two fundamental key concepts: *data providers* and *model view viewmodel*. The first concept is concerned with data retrieval, the latter is deals with data presentation.
