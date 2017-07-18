@@ -17,6 +17,7 @@ enum AppImages : String {
     case accessoriesDepartment = "accessories"
     case beautyDepartment = "beauty"
     case lingerieDepartment = "lingerie"
+    case placeholder = "placeholder"
 }
 
 extension AppImages : Asset {
