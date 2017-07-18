@@ -35,7 +35,7 @@ class CategoriesTableViewController: GenericTableViewController<DepartmentModel>
     override func setupController() {
         dataProvider = DepartmentDataProvider()
         dataSource = DepartmentsDataSource()
-        self.navigationItem.backBarButtonItem?.title = " "
+        self.title = AppStrings.departments.get()
     }
     
     /// Handles the transition toward department's product list.
