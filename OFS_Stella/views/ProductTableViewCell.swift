@@ -49,7 +49,7 @@ class ProductTableViewCell: UITableViewCell, ViewModelBindable {
     }
     
     override func prepareForReuse() {
-        thumbnailImageView.image = nil
+        thumbnailImageView.image = AppImages.placeholder.get()
         guard let currentImageTask = currentRetrieveDataRequest else {
             return
         }
